@@ -1,18 +1,19 @@
 import React from 'react'
 import Book from "./Book.tsx";
+import book from '../ts/type.ts';
+
 
 interface Props {
-data:{    title:string
-    text: string
-    imgsrc:string}
+  books: book[]
 }
 
-export default function twomain(props:Props) {
+export default function twomain(props: Props) {
+  const { books } = props
   return (
-    <div style={{display:'flex'}}>
-      {/* <Book title={props.title} imgsrc={props.imgsrc} text={props.text}/> */}
-      {/* <Book  title='second' imgsrc='https://picsum.photos/id/23/200/300' text='yewtrewitrireytirt'/>
-      <Book  title='third' imgsrc='https://picsum.photos/id/22/200/300' text='nrevkurenvireqbvreiv'/> */}
+    <div style={{ display: 'flex' }}>
+
+      {books.map((book) => (<Book Book={book}/>))}
+
     </div>
   )
 }

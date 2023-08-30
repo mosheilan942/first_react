@@ -6,7 +6,7 @@ const IntervalExample = () => {
 
 useEffect(() => {
     const interval = setInterval(() => {
-      setSeconds(Date());
+      setSeconds(Number(Date()));
     }, 1000);
     return () => clearInterval(interval);
   }, []);
@@ -14,7 +14,7 @@ useEffect(() => {
   return (
     <div className="App">
       <header className="App-header">
-        {seconds}
+      moshe ilan {seconds}
       </header>
     </div>
   );
